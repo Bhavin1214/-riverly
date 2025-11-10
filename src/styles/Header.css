@@ -1,0 +1,190 @@
+/* ===============================
+   TOP BAR (fixed top)
+=============================== */
+.header-top-bar {
+  width: 100%;
+  height: 34px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  background: #DE6B50;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  box-sizing: border-box;
+}
+
+.header-top-bar-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.circle-heart {
+  width: 20px;
+  height: 20px;
+  background: #FFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-heart img { width: 12px; height: 12px; }
+
+.text-coup { font-family: "Lora"; font-weight: 600; font-size: 14px; color: #FBD6BB; }
+.text-route { font-family: "Outfit"; font-weight: 400; font-size: 14px; color: #FFFFFF; }
+.arrow-narrow-right img { width: 14px; height: 14px; }
+
+/* ===============================
+   NAVIGATION OVER HERO IMAGE
+=============================== */
+.header-nav {
+  width: 100%;
+  position: absolute;
+  top: 34px; /* below top bar */
+  left: 0;
+  z-index: 9990;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 8px 0;
+  background: none;        /* clean, no color */
+  backdrop-filter: none;
+
+  box-sizing: border-box;
+}
+
+.frame-22 {
+  width: 100%;
+  max-width: 1180px;
+  height: 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.group-815 {
+  width: 120px;
+  height: 50px;
+  position: relative;
+}
+
+.logo-riverly {
+  width: 100%;
+  height: 100%;
+  background: url("../assets/logo.png") no-repeat center/contain;
+}
+
+/* Nav Links */
+.frame-13 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+  min-width: 0;
+}
+
+.frame-8, .frame-9, .frame-10, .frame-11 {
+  padding: 4px;
+  cursor: pointer;
+}
+
+.destinations,
+.idees-sejours,
+.nos-bateaux,
+.experience-riverly {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+/* Bons plans */
+.frame-12 {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: #FFF1D3;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.bons-plans {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 14px;
+  color: #9F2D28;
+}
+
+.loyalty img { width: 14px; height: 14px; }
+
+/* Right Controls */
+.frame-16 { display: flex; align-items: center; gap: 10px; }
+.frame-15 { display: flex; align-items: center; gap: 10px; }
+
+/* Buttons */
+.buttonPrimary1,
+.buttonPrimary2 {
+  padding: 6px 14px;
+  background: #1D6C54;
+  border-radius: 8px;
+  font-family: "Outfit";
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.frame-1 .buttonPrimary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.frame-1 .devis {
+  font-family: "Outfit";
+  font-size: 14px;
+  color: #1D6C54;
+}
+
+/* Language selector */
+.buttonSecondary {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.buttonSecondary .devis {
+  font-family: "Outfit";
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+/* ===============================
+   GLOBAL NO-SCROLL FIX
+=============================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

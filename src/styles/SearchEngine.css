@@ -1,0 +1,111 @@
+.search-engine-wrapper {
+  width: calc(100% -160px );
+  max-width: 1180px;
+  margin: 0 80px;
+  position: relative;
+  top: -70px; 
+  z-index: 100;
+}
+
+/* =============== TABS =============== */
+.search-tabs {
+  display: flex;
+  gap: 0;
+}
+
+.search-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  font-family: "Outfit";
+  font-size: 15px;
+  color: #E6F0EC;
+  background: #1D6C54;
+  cursor: pointer;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.search-tab.active {
+  background: #1D6C54;
+  color: #FFFFFF;
+}
+
+/* =============== WHITE BOX =============== */
+.search-box {
+  width: calc(100% -160px);
+  background: #FFFFFF;
+  border-radius: 2px;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Field Layout */
+.search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-family: "Outfit";
+  font-size: 14px;
+  color: #202020;
+}
+
+/* Select Styling */
+select {
+  font-family: "Outfit";
+  font-size: 15px;
+  color: #707070;
+  border: none;
+  border-bottom: 1px solid #C6C6C6;
+  padding: 6px 0;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+ 
+}
+
+/* Search Button */
+.search-submit {
+  background: #1D6C54;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  font-family: "Outfit";
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.search-submit:hover {
+  background: #155E45;
+}
+
+.arrow {
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+  .search-box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-box {
+    grid-template-columns: 1fr;
+  }
+}
