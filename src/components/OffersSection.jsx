@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import "../styles/OffersSection.css";
 import image2 from "../images/image1.png";
 import image1 from "../images/image2.png";
-import { FaArrowLeftLong, FaArrowRight } from "react-icons/fa6";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 /**
  * OffersSection
@@ -276,7 +276,7 @@ export default function OffersSection() {
             onClick={next}
             disabled={currentIndex >= maxIndex}
           >
-            <FaArrowRight />
+            <FaArrowRightLong />
           </button>
         </div>
       </div>

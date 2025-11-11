@@ -1,0 +1,341 @@
+/* Fonts - keep as you had (import in index.html or here) */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Reddit+Sans:wght@400&display=swap");
+
+/* Prevent horizontal scroll globally */
+html,
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* --- Base wrapper (Frame68) --- */
+.Frame68 {
+  position: relative;
+  top: -300px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 56px 0 56px 0;
+  background: linear-gradient(0deg, rgba(29, 108, 84, 0.8), rgba(29, 108, 84, 0.8)), #FFFFFF;
+  height: 744px;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  overflow: hidden;
+}
+
+/* Ensure section never produces horizontal scroll even when zoomed */
+.Frame68 * {
+  box-sizing: border-box;
+}
+
+/* Title row (Frame49) */
+.Frame49 {
+  width: 1280px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Title */
+.Nos-croisieres {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: center;
+}
+
+/* Top controls container (Frame65) */
+.Frame65 {
+  width: 1283px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px 0 0;
+  box-sizing: border-box;
+}
+
+/* Chips row (Frame742) */
+.Frame742 {
+  display: flex;
+  gap: 10px;
+  width: 718px;
+  margin: 0 80px;
+  align-items: center;
+}
+
+/* chip style (Frame27, Frame51, etc.) */
+.chip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0px;
+  padding: 0px 10px;
+  height: 30px;
+  border-radius: 16px;
+  background: transparent;
+  border: 1px solid rgba(251, 251, 251, 0.5);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: #fff;
+  color: #1D6C54;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.2);
+}
+
+/* right side "Toutes nos croisières fluviales" (Frame29) */
+.Frame29 {
+  position: relative;
+  right: 80px;
+  width: 268px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+.all-link {
+
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+/* --- Carousel area (Frame752 / Frame62) --- */
+/* .Frame752 {
+  width: 100%;
+  margin-top: 12px;
+} */
+
+
+
+/* Arrow buttons (use class arrow2 as requested) */
+.arrow2 {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 48px;
+  border: none;
+  background: #ffffff;
+  color: #1d6c54;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.arrow2:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.prev {
+  position: absolute;
+  left: 0;
+  border-radius: 0% 50% 50% 0%;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 50% 0% 0% 50%;
+}
+
+/* viewport that masks overflow */
+.RegionsContainer {
+  overflow: hidden;
+  width: 100%
+}
+
+/* track that moves */
+.regions-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 420ms cubic-bezier(.2, .9, .2, 1);
+  align-items: flex-start;
+  will-change: transform;
+}
+
+/* product card (Product card) */
+.Frame62 {
+  display: flex;
+  align-items: center;
+  height: 501px;
+  padding: 24px 32px 0px 80px;
+  box-sizing: border-box;
+}
+
+.Product-card {
+  box-sizing: border-box;
+  width: calc(100% / 3 - 16px);
+  max-width: 320px;
+  min-width: 232px;
+  background: #FFFBF6;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 445px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* image */
+.Image {
+  width: 100%;
+  height: 265px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px 12px 0 0;
+  flex: 0 0 265px;
+}
+
+/* card body */
+.card-body {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+/* country row */
+.country-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.flag {
+  width: 14px;
+  height: 9.8px;
+  border-radius: 2.7px;
+  background: linear-gradient(90deg, #000091 0 66.67%, #E1000F 66.67% 100%);
+}
+
+.country-name {
+  font-weight: 500;
+  color: #151515;
+  font-size: 16px;
+}
+
+/* title / desc */
+.product-title {
+  font-weight: 500;
+  font-size: 24px;
+  color: #052F33;
+  margin: 0;
+}
+
+.product-desc {
+  font-family: "Reddit Sans", sans-serif;
+  font-size: 16px;
+  color: #151515;
+  margin: 0;
+}
+
+/* divider */
+.divider {
+  border-top: 1px solid #EBEBEB;
+  position: relative;
+  bottom: 42px;
+}
+
+/* actions row */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.btn-devis {
+  background: none;
+  border: none;
+  color: #1D6C54;
+  font-weight: 500;
+  padding: 8px 0px;
+  cursor: pointer;
+  font-weight: 550; 
+}
+.btn-arrow {
+  background: none;
+  color: #1D6C54;
+  border: none;
+  padding: 8px 0px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* --- Responsiveness: JS controls perView; CSS adjusts card width for 2/1 column fallbacks --- */
+@media (max-width: 1199px) {
+  .Product-card {
+    width: calc(100% / 2 - 12px);
+    max-width: 480px;
+  }
+
+  .RegionsContainer {
+    width: calc(100% - 120px);
+  }
+}
+
+@media (max-width: 819px) {
+  .Frame68 {
+    padding-left: 24px;
+    padding-right: 24px;
+    height: auto;
+  }
+
+  .Frame62 {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .arrow2 {
+    display: none;
+  }
+
+  .RegionsContainer {
+    width: 100%;
+  }
+
+  .regions-track {
+    gap: 14px;
+    flex-direction: column;
+  }
+
+  .Product-card {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Image {
+    height: 220px;
+    flex: 0 0 auto;
+  }
+}
+
+/* ensure good zoom behaviour in Chrome: use transform-style and preserve-3d hint */
+.regions-track,
+.Product-card {
+  transform-style: preserve-3d;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* utility: hide native scrollbar for the small internal overflow (if any) */
+.RegionsContainer::-webkit-scrollbar {
+  display: none;
+}

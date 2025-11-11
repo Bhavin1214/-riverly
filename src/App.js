@@ -8,6 +8,8 @@ import AboutRiverly from './components/AboutRiverly';
 import OffersSection from './components/OffersSection';
 import DestinationsHeader from "./components/DestinationsHeader"
 import DestinationsSection from "./components/DestinationsSection"
+import Frame68Section from "./components/Frame68Section"
+
 function App() {
   return (
     <>
@@ -21,6 +23,7 @@ function App() {
       <OffersSection />
       <DestinationsHeader/>
       <DestinationsSection/>
+      <Frame68Section/>
     </>
   );
 }
