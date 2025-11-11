@@ -5,13 +5,14 @@
   position: relative;
   top: -144px;
   width: 100%;
-  min-height: 575px;
+  height: 440px;
+  min-height: 600px;
   background: #fffbf6;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 80px 5vw;
+  align-items: start;
+  padding: 135px 5vw;
   box-sizing: border-box;
 }
 
@@ -39,7 +40,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  top: -100px;
+  /* top: -100px; */
 }
 
 .about-heading {
@@ -51,6 +52,7 @@
   margin-bottom: 20px;
   margin-left: 17px;
   margin-right: 50px;
+  margin-top: 0px;
 }
 
 .about-heading span {
@@ -81,7 +83,6 @@
   border: 2px solid rgba(18, 53, 42, 0.06);
   border-radius: 8px;
   position: relative;
-  top: 60px;
   right: 17px;
 }
 
@@ -164,7 +165,7 @@
 .card-content-wrapper {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.4s ease;
+  transition: max-height 0.4s ease, padding 0.4s ease;
   padding: 0 19px;
 }
 

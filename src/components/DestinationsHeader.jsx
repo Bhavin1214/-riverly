@@ -21,8 +21,8 @@ export default function DestinationsHeader() {
         className={`destinations-cta ${clicked ? "clicked" : ""}`}
         onClick={handleClick}
       >
-        <span className="cta-text">Toutes nos destinations</span>
-        <span className="cta-arrow">→</span>
+        <span className="cta-text2">Toutes nos destinations</span>
+        <span className="cta-arrow2">→</span>
       </div>
     </section>
   );
