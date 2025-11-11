@@ -1,113 +1,104 @@
-/* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&family=Reddit+Sans:wght@400&display=swap");
 
 /* Container */
 .about-riverly {
-    position: relative;
-    top: -144px;
-    width: 100%;
-    min-height: 575px;
-    background: #fffbf6;
-    /* background: red; */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 5vw;
-    box-sizing: border-box;
+  position: relative;
+  top: -144px;
+  width: 100%;
+  min-height: 575px;
+  background: #fffbf6;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 5vw;
+  box-sizing: border-box;
 }
 
 /* Background curve */
 .background-curve {
-    position: absolute;
-    width: 100%;
-    height: 1200px;
-    top: 22%;
-    transform: rotate(0deg);
-    z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 1200px;
+  top: 22%;
+  z-index: 0;
 }
 
-/* Background cream rectangle (redundant but keeps structure consistent) */
 .background-cream {
-    position: absolute;
-    inset: 0;
-    background: #fffbf6;
-    z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: #fffbf6;
+  z-index: -1;
 }
 
 /* Left text */
 .about-text {
-    flex: 1;
-    max-width: 600px;
-    z-index: 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    top: -100px;
+  flex: 1;
+  max-width: 600px;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: -100px;
 }
 
 .about-heading {
-    font-family: "Outfit", sans-serif;
-    font-weight: 400;
-    font-size: clamp(35px, 2.5vw, 36px);
-    line-height: 130%;
-    color: #052f33;
-    margin-bottom: 20px;
-    margin-left: 17px;
-    margin-right: 50px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: clamp(35px, 2.5vw, 36px);
+  line-height: 130%;
+  color: #052f33;
+  margin-bottom: 20px;
+  margin-left: 17px;
+  margin-right: 50px;
 }
 
 .about-heading span {
-    color: #1d6c54;
-    font-weight: 500;
+  color: #1d6c54;
+  font-weight: 500;
 }
 
 .about-description {
-    font-family: "Outfit", sans-serif;
-    font-weight: 400;
-    font-size: clamp(8px, 1.1vw, 16px);
-    line-height: 130%;
-    color: #151515;
-    max-width: 600px;
-    margin-left: 17px;
-    position: relative;
-    top: -29px;
-
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: clamp(8px, 1.1vw, 16px);
+  line-height: 130%;
+  color: #151515;
+  max-width: 600px;
+  margin-left: 17px;
+  position: relative;
+  top: -29px;
 }
 
-/* Right-side cards container */
+/* Card container */
 .info-card-container {
-    flex: 1;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.86);
-    border: 2px solid rgba(18, 53, 42, 0.06);
-    border-radius: 8px;
-    position: relative;
-    top: 60px;
-    right: 17px;
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.86);
+  border: 2px solid rgba(18, 53, 42, 0.06);
+  border-radius: 8px;
+  position: relative;
+  top: 60px;
+  right: 17px;
 }
 
 /* Info card */
 .info-card {
-    width: 100%;
-    padding: 19px;
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    backdrop-filter: blur(7.5px);
-    box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(7.5px);
+  box-sizing: border-box;
 }
 
-/* Active (open) card */
 .info-card.active {
   background: #ffffff;
 }
 
-/* Header inside card */
+/* Header button */
 .card-header {
   display: flex;
   align-items: center;
@@ -115,6 +106,16 @@
   background: #f9f9f9;
   border-radius: 8px;
   gap: 20px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  padding: 19px;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.card-header:hover {
+  background: #eef3f0;
 }
 
 .icon-box {
@@ -124,10 +125,11 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  position: relative;
 }
 
-.icon{
-    position:absolute;
+.icon {
+  position: absolute;
 }
 
 .card-title {
@@ -140,35 +142,46 @@
   margin-left: 8px;
 }
 
-.arrow-icon {
-  width: 16px;
-  height: 16px;
-  background: #1f1f1f;
-  mask: url("../assets/down.svg") center / contain no-repeat;
-  -webkit-mask: url("../assets/down.svg") center / contain no-repeat;
-  flex-shrink: 0;
-}
-
+.arrow-icon,
 .arrow-icon-up {
   width: 16px;
   height: 16px;
   background: #1f1f1f;
-  mask: url("../assets/arrowUp.svg") center / contain no-repeat;
-  -webkit-mask: url("../assets/arrowUp.svg") center / contain no-repeat;
   flex-shrink: 0;
 }
 
-/* Expanded text */
+.arrow-icon {
+  mask: url("../assets/down.svg") center / contain no-repeat;
+  -webkit-mask: url("../assets/down.svg") center / contain no-repeat;
+}
+
+.arrow-icon-up {
+  mask: url("../assets/arrowUp.svg") center / contain no-repeat;
+  -webkit-mask: url("../assets/arrowUp.svg") center / contain no-repeat;
+}
+
+/* Collapsible content */
+.card-content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.4s ease;
+  padding: 0 19px;
+}
+
+.card-content-wrapper.open {
+  max-height: 400px;
+  padding: 8px 19px 19px 19px;
+}
+
 .card-content {
   font-family: "Reddit Sans", sans-serif;
   font-weight: 400;
   font-size: clamp(14px, 1.1vw, 16px);
   line-height: 140%;
   color: #052f33;
-  padding: 8px;
 }
 
-/* Layout adjustments */
+/* Responsive */
 @media (max-width: 1024px) {
   .about-riverly {
     flex-direction: column;
@@ -202,6 +215,6 @@
   }
 
   .info-card {
-    padding: 12px;
+    padding: 0;
   }
 }

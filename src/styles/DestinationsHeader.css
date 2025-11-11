@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap");
+
+/* ===== CONTAINER ===== */
+.destinations-header {
+  position: relative;
+  top: -260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 100px;
+  gap: 12px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 80px auto 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* ===== TITLE ===== */
+.destinations-title {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: #151515;
+  margin: 0;
+}
+
+.destinations-title .highlight {
+  color: #1d6c54;
+}
+
+/* ===== CTA UNDERLINE ===== */
+.destinations-cta {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 4px 0;
+  gap: 12px;
+  border-bottom: 2px solid #1d6c54;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.destinations-cta:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+.destinations-cta.clicked {
+  opacity: 0.6;
+  transform: scale(0.98);
+}
+
+/* ===== CTA TEXT ===== */
+.cta-text {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #1d6c54;
+}
+
+/* ===== CTA ARROW ===== */
+.cta-arrow {
+  width: 20px;
+  height: 20px;
+  color: #1d6c54;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .destinations-header {
+    padding: 0 60px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .destinations-header {
+    top: -180px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .destinations-title {
+    font-size: 28px;
+  }
+  .destinations-cta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .destinations-title {
+    font-size: 22px;
+  }
+  .cta-text {
+    font-size: 16px;
+  }
+  .cta-arrow {
+    font-size: 18px;
+  }
+}

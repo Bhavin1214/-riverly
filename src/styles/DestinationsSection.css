@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap");
+
+/* --- Container --- */
+.destinations-section {
+  position: relative;
+  top: -300px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 80px;
+  cursor: none;
+}
+
+/* --- Left column (scrollable content + fixed fade) --- */
+.destinations-left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 747px;
+  height: 615px; /* match map height */
+  position: relative;
+}
+
+/* Scrollable inner wrapper */
+.destinations-scroll {
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding-right: 8px;
+}
+
+/* Scrollbar style */
+.destinations-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.destinations-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.destinations-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* --- Fixed fade overlay --- */
+.fade-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  pointer-events: none;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 70%);
+}
+
+/* --- Section titles --- */
+.destination-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.destination-header h3 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #151515;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.destination-header .arrow {
+  font-size: 18px;
+  color: #1d6c54;
+  opacity: 0.5;
+}
+
+/* --- Regions Grid (3 per row) --- */
+.regions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  overflow: visible;
+}
+
+.region-card {
+  width: 100%;
+  aspect-ratio: 233 / 189;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.region-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.region-image:hover {
+  transform: scale(1.015);
+}
+
+.region-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.region-btn .arrow {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* --- Show More / Less --- */
+.show-more {
+  position: relative;
+  left: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  color: rgba(21, 21, 21, 0.4);
+  border-bottom: 1px solid rgba(21, 21, 21, 0.4);
+  width: 140px;
+  margin-top: 8px;
+  padding-bottom: 4px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 3;
+  background: #fff;
+  z-index: 9999;
+}
+
+.show-more:hover {
+  color: #1d6c54;
+  border-color: #1d6c54;
+}
+
+.down-arrow {
+  font-size: 14px;
+  color: rgba(21, 21, 21, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.show-more:hover .down-arrow {
+  transform: translateY(2px);
+}
+
+/* --- Map container (same height) --- */
+.destinations-map {
+  box-sizing: border-box;
+  width: 509px;
+  height: 615px;
+  border: 1px solid rgba(21, 21, 21, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.destinations-map img {
+  width: 420px;
+  border-radius: 8px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .destinations-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destinations-left {
+    width: 100%;
+    height: auto;
+  }
+
+  .destinations-scroll {
+    overflow: visible;
+  }
+
+  .regions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destinations-map {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .fade-bottom {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .regions-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,15 +1,21 @@
 .frame-704 {
   position: absolute;
-  top: 170px;     /* adjust hero text vertical placement */
+  top: 170px;
   left: 80px;
   z-index: 10;
-
   width: 100%;
   max-width: 620px;
-
   display: flex;
   flex-direction: column;
   gap: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1s ease;
+}
+
+.frame-704.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .main-heading {
@@ -43,7 +49,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-
   padding: 8px 18px;
   background: rgba(255,255,255,0.7);
   border-radius: 8px;
@@ -90,28 +95,61 @@
   padding-bottom: 4px;
   border-bottom: 1px solid #fff;
   width: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .cta-text {
   font-family: "Outfit";
   font-size: 15px;
   color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .cta-arrow {
   width: 14px;
   height: 14px;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.cta-container:hover .cta-text {
+  color: #fbd6bb;
+  transform: translateX(3px);
+}
+
+.cta-container:hover .cta-arrow {
+  transform: translateX(5px);
 }
 
 /* Responsive */
 @media(max-width: 900px) {
-  .frame-704 { left: 32px; top: 150px; }
-  .main-heading { font-size: 44px; }
+  .frame-704 {
+    left: 32px;
+    top: 150px;
+  }
+  .main-heading {
+    font-size: 44px;
+  }
 }
 
 @media(max-width: 600px) {
-  .frame-704 { left: 16px; right: 16px; max-width: 90%; }
-  .main-heading { font-size: 34px; }
-  .description { font-size: 15px; max-width: 320px; }
+  .frame-704 {
+    left: 16px;
+    right: 16px;
+    max-width: 90%;
+    top: 120px;
+    align-items: center;
+    text-align: center;
+  }
+  .main-heading {
+    font-size: 34px;
+  }
+  .description {
+    font-size: 15px;
+    max-width: 320px;
+  }
+  .frame-750 {
+    align-self: center;
+  }
 }

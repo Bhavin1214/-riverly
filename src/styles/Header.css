@@ -96,6 +96,7 @@
   flex: 1;
   justify-content: center;
   min-width: 0;
+  color: white;
 }
 
 .frame-8, .frame-9, .frame-10, .frame-11 {
@@ -187,4 +188,109 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+
+/* HAMBURGER MENU (MOBILE) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle img {
+  width: 26px;
+  height: 26px;
+}
+
+/* MOBILE MENU PANEL */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100%;
+  background: #1d6c54;
+  color: #fff;
+  z-index: 10000;
+  transition: right 0.3s ease-in-out;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.close-menu {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.close-menu img {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-link {
+  font-family: "Outfit";
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.2s;
+}
+.mobile-link:hover,
+.mobile-link.active {
+  color: #fbd6bb;
+}
+
+.mobile-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mobile-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Overlay behind menu */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 992px) {
+  .desktop-menu,
+  .desktop-controls {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-menu {
+    width: 100%;
+  }
 }
