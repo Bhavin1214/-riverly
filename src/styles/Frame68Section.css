@@ -172,7 +172,7 @@ body {
   display: flex;
   align-items: center;
   height: 501px;
-  padding: 24px 32px 0px 80px;
+  padding: 24px 0px 0px 80px;
   box-sizing: border-box;
 }
 
@@ -214,13 +214,6 @@ body {
   display: flex;
   gap: 8px;
   align-items: center;
-}
-
-.flag {
-  width: 14px;
-  height: 9.8px;
-  border-radius: 2.7px;
-  background: linear-gradient(90deg, #000091 0 66.67%, #E1000F 66.67% 100%);
 }
 
 .country-name {
@@ -338,4 +331,32 @@ body {
 /* utility: hide native scrollbar for the small internal overflow (if any) */
 .RegionsContainer::-webkit-scrollbar {
   display: none;
+}
+
+/* flag image display */
+.flag-img {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* smooth card hover feedback */
+.Product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.Product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* paused state visual hint (optional subtle overlay) */
+.Frame68.paused::after {
+  content: "▌▌";
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  color: rgba(255,255,255,0.5);
+  font-size: 18px;
+  pointer-events: none;
 }
