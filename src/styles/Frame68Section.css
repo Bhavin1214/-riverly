@@ -1,35 +1,33 @@
-/* Fonts - keep as you had (import in index.html or here) */
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Reddit+Sans:wght@400&display=swap");
 
-/* Prevent horizontal scroll globally */
+/* Global reset */
 html,
 body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
 
-/* --- Base wrapper (Frame68) --- */
+.Frame68 * {
+  box-sizing: border-box;
+}
+
+/* Base wrapper */
 .Frame68 {
   position: relative;
   top: -300px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 56px 0 56px 0;
-  background: linear-gradient(0deg, rgba(29, 108, 84, 0.8), rgba(29, 108, 84, 0.8)), #FFFFFF;
+  padding: 56px 0;
+  background: linear-gradient(0deg, rgba(29, 108, 84, 0.8), rgba(29, 108, 84, 0.8)), #ffffff;
   height: 744px;
-  box-sizing: border-box;
   color: #fff;
   font-family: "Outfit", sans-serif;
   overflow: hidden;
 }
 
-/* Ensure section never produces horizontal scroll even when zoomed */
-.Frame68 * {
-  box-sizing: border-box;
-}
-
-/* Title row (Frame49) */
+/* Title section */
 .Frame49 {
   width: 1280px;
   margin-bottom: 16px;
@@ -38,27 +36,24 @@ body {
   gap: 8px;
 }
 
-/* Title */
 .Nos-croisieres {
   font-weight: 400;
   font-size: 36px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   text-align: center;
 }
 
-/* Top controls container (Frame65) */
+/* Controls */
 .Frame65 {
   width: 1283px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px 32px 0 0;
-  box-sizing: border-box;
 }
 
-/* Chips row (Frame742) */
 .Frame742 {
   display: flex;
   gap: 10px;
@@ -67,13 +62,10 @@ body {
   align-items: center;
 }
 
-/* chip style (Frame27, Frame51, etc.) */
 .chip {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 0px;
-  padding: 0px 10px;
+  padding: 0 10px;
   height: 30px;
   border-radius: 16px;
   background: transparent;
@@ -81,15 +73,20 @@ body {
   color: #fff;
   font-size: 14px;
   cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.chip:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .chip.active {
   background: #fff;
-  color: #1D6C54;
+  color: #1d6c54;
   border-bottom: 1px solid rgba(21, 21, 21, 0.2);
 }
 
-/* right side "Toutes nos croisières fluviales" (Frame29) */
+/* All link right side */
 .Frame29 {
   position: relative;
   right: 80px;
@@ -97,11 +94,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #FFFFFF;
+  border-bottom: 2px solid #ffffff;
 }
 
 .all-link {
-
   background: none;
   border: none;
   color: #fff;
@@ -110,15 +106,17 @@ body {
   cursor: pointer;
 }
 
-/* --- Carousel area (Frame752 / Frame62) --- */
-/* .Frame752 {
-  width: 100%;
-  margin-top: 12px;
-} */
+/* Carousel area */
+.Frame62 {
+  display: flex;
+  align-items: center;
+  height: 501px;
+  padding: 24px 0 0 0px;
+  position: relative;
+  box-sizing: border-box;
+}
 
-
-
-/* Arrow buttons (use class arrow2 as requested) */
+/* Arrows */
 .arrow2 {
   width: 48px;
   height: 48px;
@@ -133,6 +131,13 @@ body {
   cursor: pointer;
   font-size: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: 0.25s ease;
+  z-index: 3;
+}
+
+.arrow2:hover:not(:disabled) {
+  background: #1d6c54;
+  color: #fff;
 }
 
 .arrow2:disabled {
@@ -143,64 +148,63 @@ body {
 .prev {
   position: absolute;
   left: 0;
-  border-radius: 0% 50% 50% 0%;
+  border-radius: 0 50% 50% 0;
 }
 
 .next {
   position: absolute;
   right: 0;
-  border-radius: 50% 0% 0% 50%;
+  border-radius: 50% 0 0 50%;
 }
 
-/* viewport that masks overflow */
+/* Viewport */
 .RegionsContainer {
   overflow: hidden;
-  width: 100%
+  width: 100%;
+  position: relative;
 }
 
-/* track that moves */
+/* Track (auto-scroll) */
 .regions-track {
   display: flex;
   gap: 24px;
-  transition: transform 420ms cubic-bezier(.2, .9, .2, 1);
-  align-items: flex-start;
+  align-items: stretch;
+  transition: transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
-/* product card (Product card) */
-.Frame62 {
-  display: flex;
-  align-items: center;
-  height: 501px;
-  padding: 24px 0px 0px 80px;
-  box-sizing: border-box;
-}
-
+/* Cards */
 .Product-card {
-  box-sizing: border-box;
-  width: calc(100% / 3 - 16px);
-  max-width: 320px;
-  min-width: 232px;
-  background: #FFFBF6;
+  background: #fffbf6;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   height: 445px;
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
   overflow: hidden;
   flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* image */
+.Product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
 .Image {
   width: 100%;
   height: 265px;
   background-size: cover;
   background-position: center;
   border-radius: 12px 12px 0 0;
-  flex: 0 0 265px;
 }
 
-/* card body */
+/* Card body */
 .card-body {
   padding: 8px 16px;
   display: flex;
@@ -209,11 +213,18 @@ body {
   flex: 1;
 }
 
-/* country row */
+/* Country row */
 .country-row {
   display: flex;
   gap: 8px;
   align-items: center;
+}
+
+.flag-img {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  object-fit: cover;
 }
 
 .country-name {
@@ -222,11 +233,11 @@ body {
   font-size: 16px;
 }
 
-/* title / desc */
+/* Texts */
 .product-title {
   font-weight: 500;
   font-size: 24px;
-  color: #052F33;
+  color: #052f33;
   margin: 0;
 }
 
@@ -237,14 +248,14 @@ body {
   margin: 0;
 }
 
-/* divider */
+/* Divider */
 .divider {
-  border-top: 1px solid #EBEBEB;
+  border-top: 1px solid #ebebeb;
   position: relative;
   bottom: 42px;
 }
 
-/* actions row */
+/* Card actions */
 .card-actions {
   margin-top: auto;
   display: flex;
@@ -255,30 +266,31 @@ body {
 .btn-devis {
   background: none;
   border: none;
-  color: #1D6C54;
-  font-weight: 500;
-  padding: 8px 0px;
+  color: #1d6c54;
+  font-weight: 550;
+  padding: 8px 0;
   cursor: pointer;
-  font-weight: 550; 
 }
+
 .btn-arrow {
   background: none;
-  color: #1D6C54;
+  color: #1d6c54;
   border: none;
-  padding: 8px 0px;
+  padding: 8px 0;
   border-radius: 8px;
   cursor: pointer;
 }
 
-/* --- Responsiveness: JS controls perView; CSS adjusts card width for 2/1 column fallbacks --- */
+/* Responsive behavior */
 @media (max-width: 1199px) {
   .Product-card {
-    width: calc(100% / 2 - 12px);
-    max-width: 480px;
+    width: 280px;
+    min-width: 280px;
   }
 
-  .RegionsContainer {
-    width: calc(100% - 120px);
+  .regions-track {
+    padding-left: 60px;
+    padding-right: 60px;
   }
 }
 
@@ -306,57 +318,38 @@ body {
   .regions-track {
     gap: 14px;
     flex-direction: column;
+    padding: 0;
   }
 
   .Product-card {
     width: 100%;
     max-width: 100%;
-    flex-direction: column;
     height: auto;
   }
 
   .Image {
     height: 220px;
-    flex: 0 0 auto;
   }
 }
 
-/* ensure good zoom behaviour in Chrome: use transform-style and preserve-3d hint */
+/* Misc */
 .regions-track,
 .Product-card {
   transform-style: preserve-3d;
   -webkit-font-smoothing: antialiased;
 }
 
-/* utility: hide native scrollbar for the small internal overflow (if any) */
 .RegionsContainer::-webkit-scrollbar {
   display: none;
 }
 
-/* flag image display */
-.flag-img {
-  width: 18px;
-  height: 12px;
-  border-radius: 2px;
-  object-fit: cover;
-}
-
-/* smooth card hover feedback */
-.Product-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.Product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-/* paused state visual hint (optional subtle overlay) */
+/* Optional paused indicator */
 .Frame68.paused::after {
   content: "▌▌";
   position: absolute;
   top: 16px;
   right: 20px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 18px;
   pointer-events: none;
 }

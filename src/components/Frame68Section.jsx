@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "../styles/Frame68Section.css";
 import img1 from "../images/canal.png";
 import img2 from "../images/bourgogne2.png";
@@ -8,7 +8,6 @@ import cursorSvg from "../assets/cursor.svg";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
-// flags
 import FranceFlag from "../assets/flags/france.svg";
 import AllemagneFlag from "../assets/flags/allemagne.svg";
 import PaysBasFlag from "../assets/flags/paysbas.svg";
@@ -17,18 +16,20 @@ import IrlandeFlag from "../assets/flags/irlande.svg";
 import PortugalFlag from "../assets/flags/portugal.svg";
 import HongrieFlag from "../assets/flags/hongrie.svg";
 
-// datasets (short form reused)
-const makeSet = (name, flag) => [
-  { id: 1, img: img1, country: name, title: "Bordeaux & Vignobles", desc: "Une région historique et un savoir-faire unique.", countryFlag: flag },
-  { id: 2, img: img2, country: name, title: "Touraine", desc: "Châteaux et nature le long de l'eau.", countryFlag: flag },
-  { id: 3, img: img3, country: name, title: "Camargue", desc: "Paysages sauvages et faune.", countryFlag: flag },
-  { id: 4, img: img4, country: name, title: "Alsace", desc: "Villages, vignobles et traditions.", countryFlag: flag },
-  { id: 5, img: img1, country: name, title: "Bretagne", desc: "Côtes sauvages et ports.", countryFlag: flag },
-  { id: 6, img: img2, country: name, title: "Normandie", desc: "Histoire et paysages fluviaux.", countryFlag: flag },
-  { id: 7, img: img3, country: name, title: "Canal du Midi", desc: "Croisières paisibles au soleil.", countryFlag: flag },
-  { id: 8, img: img4, country: name, title: "Bourgogne", desc: "Vignes, nature et gastronomie.", countryFlag: flag },
-  { id: 9, img: img1, country: name, title: "Aquitaine", desc: "Charmes fluviaux et villages.", countryFlag: flag },
-];
+const CARD_WIDTH = 320;
+const GAP = 24;
+const LEFT_PADDING = 80;
+const RIGHT_PADDING = 80;
+
+const makeSet = (name, flag) =>
+  Array.from({ length: 9 }).map((_, i) => ({
+    id: i + 1,
+    img: [img1, img2, img3, img4][i % 4],
+    country: name,
+    title: `${name} ${i + 1}`,
+    desc: "Description du lieu et expériences fluviales.",
+    countryFlag: flag,
+  }));
 
 const datasets = {
   France: makeSet("France", FranceFlag),
@@ -42,69 +43,78 @@ const datasets = {
 
 export default function Frame68Section() {
   const [activeCountry, setActiveCountry] = useState("France");
-  const [index, setIndex] = useState(0);
-  const [perView, setPerView] = useState(3);
-  const [paused, setPaused] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [maxIndex, setMaxIndex] = useState(0);
   const viewportRef = useRef(null);
+  const autoSlideRef = useRef(null);
+  const isUserInteracting = useRef(false);
 
   const items = datasets[activeCountry] || [];
-  const maxIndex = Math.max(0, items.length - perView);
 
-  // responsive perView setup
+  // calculate max index like OffersSection
   useEffect(() => {
-    function handleResize() {
-      const w = window.innerWidth;
-      if (w >= 1200) setPerView(3);
-      else if (w >= 820) setPerView(2);
-      else setPerView(1);
-      setIndex(0);
-    }
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    const updateDimensions = () => {
+      if (!viewportRef.current) return;
+      const vw = viewportRef.current.offsetWidth;
 
-  // autoplay effect
+      const totalCardsWidth = items.length * CARD_WIDTH;
+      const totalGapsWidth = (items.length - 1) * GAP;
+      const totalContentWidth =
+        totalCardsWidth + totalGapsWidth + LEFT_PADDING + RIGHT_PADDING;
+
+      const maxTranslate = totalContentWidth - vw;
+      const cardPlusGap = CARD_WIDTH + GAP;
+      const calculatedMaxIndex = Math.floor(maxTranslate / cardPlusGap);
+
+      setMaxIndex(Math.max(0, calculatedMaxIndex));
+      setCurrentIndex((prev) => Math.min(prev, calculatedMaxIndex));
+    };
+
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    const timer = setTimeout(updateDimensions, 100);
+
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+      clearTimeout(timer);
+    };
+  }, [items]);
+
+  // auto-slide identical to OffersSection
   useEffect(() => {
-    if (paused) return;
-    const interval = setInterval(() => {
-      setIndex((prev) => {
-        if (prev >= maxIndex) return 0;
-        return prev + 1;
-      });
+    if (autoSlideRef.current) clearInterval(autoSlideRef.current);
+    autoSlideRef.current = setInterval(() => {
+      if (!isUserInteracting.current) {
+        setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+      }
     }, 3000);
-    return () => clearInterval(interval);
-  }, [paused, maxIndex, activeCountry]);
-
-  // keyboard nav
-  useEffect(() => {
-    function onKey(e) {
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => clearInterval(autoSlideRef.current);
   }, [maxIndex]);
 
-  function prev() {
-    setPaused(true);
-    setIndex((i) => Math.max(0, i - 1));
-  }
-  function next() {
-    setPaused(true);
-    setIndex((i) => Math.min(maxIndex, i + 1));
-  }
+  const prev = useCallback(() => {
+    setCurrentIndex((prev) => Math.max(0, prev - 1));
+    isUserInteracting.current = true;
+    setTimeout(() => (isUserInteracting.current = false), 4000);
+  }, []);
 
-  const cardPercent = 100 / perView;
-  const trackTranslate = -(index * cardPercent);
+  const next = useCallback(() => {
+    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
+    isUserInteracting.current = true;
+    setTimeout(() => (isUserInteracting.current = false), 4000);
+  }, [maxIndex]);
+
+  const handleMouseEnter = () => (isUserInteracting.current = true);
+  const handleMouseLeave = () => (isUserInteracting.current = false);
+
+  const cardPlusGap = CARD_WIDTH + GAP;
+  const translateX = currentIndex * cardPlusGap;
 
   return (
     <section
       className="Frame68"
       style={{ cursor: `url(${cursorSvg}) 12 12, auto` }}
-      aria-label="Nos croisières fluviales"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="Frame49">
         <div className="title-wrap">
@@ -119,7 +129,7 @@ export default function Frame68Section() {
                 className={`chip ${activeCountry === country ? "active" : ""}`}
                 onClick={() => {
                   setActiveCountry(country);
-                  setIndex(0);
+                  setCurrentIndex(0);
                 }}
               >
                 {country}
@@ -140,7 +150,7 @@ export default function Frame68Section() {
             className="arrow2 prev"
             aria-label="Précédent"
             onClick={prev}
-            disabled={index === 0}
+            disabled={currentIndex === 0}
           >
             <FaArrowLeftLong />
           </button>
@@ -149,8 +159,9 @@ export default function Frame68Section() {
             <div
               className="regions-track"
               style={{
-                width: `${(items.length * 100) / perView}%`,
-                transform: `translateX(${trackTranslate}%)`,
+                transform: `translateX(-${translateX}px)`,
+                paddingLeft: LEFT_PADDING,
+                paddingRight: RIGHT_PADDING,
               }}
             >
               {items.map((it) => (
@@ -158,12 +169,14 @@ export default function Frame68Section() {
                   <div
                     className="Image"
                     style={{ backgroundImage: `url(${it.img})` }}
-                    role="img"
-                    aria-label={it.title}
                   />
                   <div className="card-body">
                     <div className="country-row">
-                      <img src={it.countryFlag} alt={it.country} className="flag-img" />
+                      <img
+                        src={it.countryFlag}
+                        alt={it.country}
+                        className="flag-img"
+                      />
                       <div className="country-name">{it.country}</div>
                     </div>
                     <h3 className="product-title">{it.title}</h3>
@@ -185,7 +198,7 @@ export default function Frame68Section() {
             className="arrow2 next"
             aria-label="Suivant"
             onClick={next}
-            disabled={index >= maxIndex}
+            disabled={currentIndex >= maxIndex}
           >
             <FaArrowRightLong />
           </button>
