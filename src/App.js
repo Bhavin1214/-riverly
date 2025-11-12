@@ -9,6 +9,7 @@ import OffersSection from './components/OffersSection';
 import DestinationsHeader from "./components/DestinationsHeader"
 import DestinationsSection from "./components/DestinationsSection"
 import Frame68Section from "./components/Frame68Section"
+import Frame692 from "./components/Frame692"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <DestinationsHeader/>
       <DestinationsSection/>
       <Frame68Section/>
+      <Frame692/>
     </>
   );
 }
