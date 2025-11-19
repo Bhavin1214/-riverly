@@ -64,7 +64,7 @@ export default function Frame68Section() {
 
       const maxTranslate = totalContentWidth - vw;
       const cardPlusGap = CARD_WIDTH + GAP;
-      const calculatedMaxIndex = Math.floor(maxTranslate / cardPlusGap);
+      const calculatedMaxIndex = Math.floor(maxTranslate / cardPlusGap) + 1;
 
       setMaxIndex(Math.max(0, calculatedMaxIndex));
       setCurrentIndex((prev) => Math.min(prev, calculatedMaxIndex));
@@ -107,7 +107,7 @@ export default function Frame68Section() {
   const handleMouseLeave = () => (isUserInteracting.current = false);
 
   const cardPlusGap = CARD_WIDTH + GAP;
-  const translateX = currentIndex * cardPlusGap;
+  const translateX = currentIndex != maxIndex ? currentIndex * cardPlusGap : ((currentIndex - 1) * cardPlusGap) + 260;
 
   return (
     <section

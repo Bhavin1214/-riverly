@@ -17,24 +17,24 @@ const AboutRiverly = () => {
     {
       title: "Vivez l’expérience authentique du tourisme fluvial",
       icon: firstIcon,
-      content: `Voyager avec Riverly, c’est partager une expérience touristique authentique. 
-      Les maîtres mots sont la proximité, la découverte et l’autonomie. En louant votre bateau, 
-      vous devenez le capitaine de votre croisière fluviale ! Découvrez la convivialité du voyage 
+      content: `Voyager avec Riverly, c’est partager une expérience touristique authentique.
+      Les maîtres mots sont la proximité, la découverte et l’autonomie. En louant votre bateau,
+      vous devenez le capitaine de votre croisière fluviale ! Découvrez la convivialité du voyage
       en famille, entre amis ou en couple à travers des paysages authentiques, la nature et le patrimoine local.`,
     },
     {
       title: "Des vacances originales et personnalisées avec Riverly",
       icon: secondIcon,
-      content: `Avec Riverly, chaque itinéraire devient unique. Créez votre parcours en fonction de vos envies : 
-      culture, gastronomie, nature ou détente. Nos bateaux sont équipés pour offrir un confort optimal et 
-      une expérience sur mesure, quelle que soit la destination. Laissez-vous guider par vos inspirations et 
+      content: `Avec Riverly, chaque itinéraire devient unique. Créez votre parcours en fonction de vos envies :
+      culture, gastronomie, nature ou détente. Nos bateaux sont équipés pour offrir un confort optimal et
+      une expérience sur mesure, quelle que soit la destination. Laissez-vous guider par vos inspirations et
       profitez d’un séjour sur l’eau à votre rythme.`,
     },
     {
       title: "Des croisières fluviales inoubliables vous attendent",
       icon: thirdIcon,
-      content: `Nos croisières vous permettent de redécouvrir la beauté des voies navigables françaises et européennes. 
-      Admirez des villages pittoresques, goûtez à la cuisine locale, et savourez la tranquillité du fleuve. 
+      content: `Nos croisières vous permettent de redécouvrir la beauté des voies navigables françaises et européennes.
+      Admirez des villages pittoresques, goûtez à la cuisine locale, et savourez la tranquillité du fleuve.
       Chaque moment à bord d’un bateau Riverly devient un souvenir inoubliable, entre liberté, sérénité et émerveillement.`,
     },
   ];

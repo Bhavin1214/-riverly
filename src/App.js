@@ -10,22 +10,31 @@ import DestinationsHeader from "./components/DestinationsHeader"
 import DestinationsSection from "./components/DestinationsSection"
 import Frame68Section from "./components/Frame68Section"
 import Frame692 from "./components/Frame692"
+import Frame9 from './components/Frame9'
+import Frame757 from './components/Frame757';
+import Trustpilot from './components/Trustpilot';
+import BoatsSlider from './components/BoatsSlider';
+
 
 function App() {
   return (
     <>
       <Header />
-      <div class="hero-wrapper">
+      <div className="hero-wrapper">
         <BackgroundImage />
         <Frame704 />
       </div>
       <SearchEngine />
       <AboutRiverly />
       <OffersSection />
-      <DestinationsHeader/>
-      <DestinationsSection/>
-      <Frame68Section/>
-      <Frame692/>
+      <DestinationsHeader />
+      <DestinationsSection />
+      <Frame68Section />
+      <Frame692 />
+      <Frame9 />
+      <Frame757/>
+      <Trustpilot/>
+      <BoatsSlider/>
     </>
   );
 }
