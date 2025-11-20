@@ -1,0 +1,93 @@
+.frame768 {
+    background: #194557;
+    transform: translateY(-330px);
+    padding-left: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.BS-header {
+    text-align: center;
+    padding: 20px 80px 20px 0;
+}
+
+.BS-header p {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 130%;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.BS-filters {
+    padding: 0 80px 0px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.BS-filters-option,
+.BS-boatType {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.BS-FO-chip,
+.BS-boatType-chip {
+    border: 1px solid rgba(251, 251, 251, 0.5);
+    color: white;
+    background: #194557;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.BS-FO-chipActive,
+.BS-boatType-chipActive {
+    border: 1px solid rgba(251, 251, 251, 0.5);
+    color: #194557;
+    background: white;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.BS-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.BS-text p {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.BS-underline{
+    background: white;
+    width: 100%;
+    height: 2px;
+}
+

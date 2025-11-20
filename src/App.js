@@ -13,7 +13,7 @@ import Frame692 from "./components/Frame692"
 import Frame9 from './components/Frame9'
 import Frame757 from './components/Frame757';
 import Trustpilot from './components/Trustpilot';
-import BoatsSlider from './components/BoatsSlider';
+import Frame768 from './components/Frame768';
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
       <Frame9 />
       <Frame757/>
       <Trustpilot/>
-      <BoatsSlider/>
+      <Frame768/>
     </>
   );
 }
