@@ -14,6 +14,8 @@ import Frame9 from './components/Frame9'
 import Frame757 from './components/Frame757';
 import Trustpilot from './components/Trustpilot';
 import Frame768 from './components/Frame768';
+import Frame767 from './components/Frame767';
+import FrameFAQ from './components/FrameFAQ';
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
       <Frame757/>
       <Trustpilot/>
       <Frame768/>
+      <Frame767/>
+      <FrameFAQ/>
     </>
   );
 }

@@ -1,14 +1,14 @@
 .frame768 {
     background: #194557;
     transform: translateY(-330px);
-    padding-left: 80px;
+    /* padding-left: 80px; */
     position: relative;
     z-index: 10;
 }
 
 .BS-header {
     text-align: center;
-    padding: 20px 80px 20px 0;
+    padding: 20px 80px 20px 80px;
 }
 
 .BS-header p {
@@ -21,8 +21,14 @@
     margin: 0;
 }
 
+.BS-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .BS-filters {
-    padding: 0 80px 0px 0;
+    padding: 0 80px 0px 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -48,6 +54,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
+    display: flex;
 }
 
 .BS-FO-chipActive,
@@ -85,9 +92,226 @@
     color: #FFFFFF;
 }
 
-.BS-underline{
+.BS-underline {
     background: white;
     width: 100%;
     height: 2px;
 }
 
+.BS-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+}
+.BS-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.BS-card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    background: #FFFBF6;
+    border-radius: 20px;
+    width: calc((100% - 200px)/3);
+    min-width: calc((100% - 200px)/3);
+    max-width: calc((100% - 200px)/3);
+}
+
+.BS-card:last-child {
+    margin-right: 80px;
+}
+.BS-card:first-child {
+    margin-left: 80px;
+}
+
+.boat-card__image-wrapper {
+    border-radius: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.boat-card__image {
+    width: 100%;
+}
+
+.boat-card__badge {
+    position: absolute;
+    width: 75px;
+    height: 25px;
+    left: 8px;
+    top: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: rgba(21, 21, 21, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+}
+
+.boat-card__badge span {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.boat-card__body {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+}
+
+.boat-card__Ubody {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 100%;
+}
+
+.boat-card__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    margin: 5px 0 5px 0;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #052F33;
+    width: 100%;
+}
+
+.boat-card__stats {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-right: 10px;
+    gap: 8px;
+}
+
+.boat-card__stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    gap: 3px;
+}
+
+.boat-card__divider {
+    margin-top: 3px;
+    width: 100%;
+    height: 0px;
+    border: 1px solid #EBEBEB;
+}
+
+.boat-card__Dbody {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+}
+
+.boat-card__price {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #194556;
+}
+
+.boat-card__cta {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0px;
+    gap: 4px;
+    background: #194556;
+    border-radius: 8px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.BS-navigation {
+    width: calc(100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    top: -210px;
+    left: 0px;
+}
+
+.bS-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    width: 48px;
+    height: 48px;
+    background: rgba(21, 21, 21, 0.1);
+    border-radius: 0px 48px 48px 0px;
+}
+
+.BS-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    width: 48px;
+    height: 48px;
+    background: rgba(21, 21, 21, 0.1);
+    border-radius: 48px 0px 0px 48px;
+}
+
+.BS-right:hover{
+    background: white;
+}
+
+.bS-left:hover {
+    background: white;
+}

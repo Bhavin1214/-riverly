@@ -1,0 +1,182 @@
+.frame767 {
+    position: relative;
+    top: -330px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 36px;
+    gap: 36px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Header */
+.BR-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.BR-header-title {
+    font-family: 'Outfit';
+    font-weight: 400;
+    font-size: 32px;
+    /* was 36 */
+    line-height: 130%;
+    margin: 0;
+    color: #151515;
+}
+
+.BR-header-title span {
+    color: #1D6C54;
+}
+
+/* Header link */
+.BR-header-link {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    border-bottom: 2px solid #151515;
+    padding: 3.6px 0;
+    cursor: pointer;
+}
+
+.BR-header-link-text {
+    font-family: 'Outfit';
+    font-size: 16px;
+    /* was 18 */
+    color: #151515;
+}
+
+.BR-header-link-arrow {
+    width: 18px;
+    /* was 20 */
+    height: 18px;
+}
+
+/* Cards row */
+.BR-cards {
+    display: flex;
+    flex-direction: row;
+    padding: 0 72px;
+    /* was 80 */
+    gap: 22px;
+    /* was 24 */
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Individual card */
+.BR-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    /* was 16 */
+    width: 346px;
+    /* was 384 */
+    min-width: 346px;
+}
+
+/* Image */
+.BR-card-image {
+    width: 346px;
+    /* was 384 */
+    height: 220px;
+    /* was 245 */
+    border-radius: 18px;
+    /* was 20 */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Body content */
+.BR-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* was 12 */
+}
+
+/* Meta row */
+.BR-card-meta-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Author */
+.BR-card-author {
+    display: flex;
+    align-items: center;
+    gap: 5.4px;
+    /* was 6 */
+}
+
+.BR-author-img {
+    width: 29px;
+    /* was 32 */
+    height: 29px;
+    border-radius: 50%;
+}
+
+.BR-author-text {
+    font-family: 'Outfit';
+    font-size: 14.4px;
+    /* was 16 */
+    color: #052F33;
+}
+
+/* Date */
+.BR-date {
+    font-family: 'Outfit';
+    font-size: 14.4px;
+    /* was 16 */
+    color: #052F33;
+}
+
+/* Title */
+.BR-card-title {
+    margin: 0;
+    font-family: 'Outfit';
+    font-weight: 500;
+    font-size: 21.6px;
+    /* was 24 */
+    line-height: 27px;
+    /* was 30 */
+    color: #052F33;
+}
+
+/* Read link */
+.BR-read {
+    border-bottom: 2px solid #1D6C54;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding: 3.6px 0;
+    gap: 7px;
+    cursor: pointer;
+}
+
+.BR-read-text {
+    font-family: 'Outfit';
+    font-size: 16px;
+    /* was 18 */
+    color: #1D6C54;
+}
+
+.BR-read-arrow {
+    width: 18px;
+    /* was 20 */
+    height: 18px;
+    color: #1D6C54;
+}
+
+.extraSpace{
+    height: 330px;
+    width: calc(100% + 72px);
+}
